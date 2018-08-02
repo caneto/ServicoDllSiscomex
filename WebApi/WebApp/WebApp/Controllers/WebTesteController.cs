@@ -15,20 +15,30 @@ namespace WebApp.Controllers
         public HttpResponseMessage responseConsumo;
         public HttpClient client;
         public RetornoSiscomex retornoSiscomex;
+        
+        // Tipos de RoleType
+        //IMPEXP     Declarante importador/exportador
+        //DEPOSIT    Depositário
+        //OPERPORT   Operador Portuário
+        //TRANSPORT  Transportador
+        //AGEREMESS  Remessa Expressa/Correio
+        //AJUDESPAC  Ajudante de Despachante
+        //HABILITAD  Habilitador
+        //PUBLICO    Público
 
         // GET api/values
-        public RetornoSiscomex GetDUEx(String numeroDue)
+        public RetornoSiscomex GetDUETeste(String numeroDue)
         {
 
             SiscomexController siscomexController = new SiscomexController();
 
             ServicoParametros servicoParametros = new ServicoParametros();
 
-            string priKeyFile = "1000247237.pfx";
+            string priKey = "1234567890.pfx"; /// Numero do Certificado padrão A1 em Arquivo pfx
 
-            servicoParametros.SetCertificado(priKeyFile);
-            servicoParametros.SetSenhaCertificado("cmsp270790");
-            servicoParametros.SetTipoRoleType("DEPOSIT");
+            servicoParametros.SetCertificado(priKey);
+            servicoParametros.SetSenhaCertificado("senha"); /// Senha usada no Certificado.
+            servicoParametros.SetTipoRoleType("DEPOSIT");  /// Tipo de RoleType (De acordo com o manual do Siscomex)
             servicoParametros.SetComCertificado(false);
 
             retornoSiscomex = siscomexController.GetDUE(numeroDue, servicoParametros);

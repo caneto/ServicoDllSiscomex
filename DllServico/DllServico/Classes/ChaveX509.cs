@@ -16,7 +16,7 @@ namespace DllServico.Classes
         // Parametros certificado = "nome sem a extensão" / senha do certificado
         private static X509Certificate2 GetClientCertificate(ServicoParametros servicoParametros)
         {
-            // Carrega o arquivo de certificado A1 (verificar sempre a validade dele.
+            //Carrega o arquivo de certificado A1 (verificar sempre a validade dele.
             //string priKeyFile = HttpContext.Current.Server.MapPath("~/certificado/" + certificado+".pfx");
             //var extensao = ".pfx";
             string priKeyFile =
@@ -42,8 +42,7 @@ namespace DllServico.Classes
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
-            //ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
-
+            
             client = new HttpClient(requestHandler);
 
             return client;

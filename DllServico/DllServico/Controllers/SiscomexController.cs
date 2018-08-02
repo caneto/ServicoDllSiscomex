@@ -9,8 +9,6 @@ namespace DllServico.Controllers
 {
     public class SiscomexController
     {
-        private bool falhou;
-
         public IEnumerable<String> token = null;
         public IEnumerable<String> xCSRFtoken = null;
 

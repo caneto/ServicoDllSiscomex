@@ -11,4 +11,4 @@ Assemblies para .NET 4.5.x
 
 Informações via Email
 
-mailto:cacpnrj@gmail.com
+cacpnrj@gmail.com

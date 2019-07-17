@@ -9,6 +9,4 @@ A Dll de serviço, para integração com o Siscomex é composta de varios modulo
 Características<br/>
 Assemblies para .NET 4.5.x
 
-Informações via Email
-
-cacpnrj@gmail.com
+Por enquanto não estou dando suporte a este componente.
